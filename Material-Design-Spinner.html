@@ -5,6 +5,8 @@
     <title>Material-Design-Spinner</title>
     <style type="text/css">
     .spinner {
+        width: 35px;
+        height: 35px;
         animation: rotator 1.4s linear infinite;
     }
     @keyframes rotator {
@@ -24,19 +26,19 @@
 
     @keyframes colors {
         0% {
-            stroke: #4285F4;
+            stroke: #000;
         }
         25% {
-            stroke: #DE3E35;
+            stroke: #000;
         }
         50% {
-            stroke: #F7C223;
+            stroke: #000;
         }
         75% {
-            stroke: #1B9A59;
+            stroke: #000;
         }
         100% {
-            stroke: #4285F4;
+            stroke: #000;
         }
     }
 
@@ -59,7 +61,7 @@
 </head>
 
 <body>
-    <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+    <svg class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
         <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
     </svg>
 </body>
