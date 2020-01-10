@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <title>CodePen - Pure CSS Slider</title>
     <style>
+
         .csslider {
-            -moz-perspective: 1300px;
+          -moz-perspective: 1300px;
           -ms-perspective: 1300px;
           -webkit-perspective: 1300px;
           perspective: 1300px;
@@ -14,6 +15,8 @@
           position: relative;
           margin-bottom: 22px;
         }
+
+        /*___________________________________ input ___________________________________ */
         .csslider > input {
           display: none;
         }
@@ -47,6 +50,8 @@
         .csslider > input:nth-of-type(1):checked ~ ul li:first-of-type {
           margin-left: 0%;
         }
+
+        /*___________________________________ UL ___________________________________ */
         .csslider > ul {
           position: relative;
           width: 820px;
@@ -86,6 +91,8 @@
         .csslider > ul > li.scrollable {
           overflow-y: scroll;
         }
+
+        /*___________________________________ NAVIGATION ___________________________________ */
         .csslider > .navigation {
           position: absolute;
           bottom: -8px;
