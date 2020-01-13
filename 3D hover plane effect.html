@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title>3D hover plane effect</title>
-
-    <style type="text/css">
-        @import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700);
+    <head>
+        <title>3D hover plane effect</title>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <style type="text/css">
         body {
             background: #edf2f4;
             perspective: 1000px;
@@ -67,29 +66,29 @@
                 pointer-events: auto;
             }
         }
-    </style>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-</head>
+        </style>
+    </head>
 
-<body>
-    <div class="card">
-        <div class="card-content">
-            <h1>Just hover around</h1>
-            <p><small>by <a href="https://www.fiverr.com/share/vLevr" target="_blank">Ariona, Rian</a></small></p>
-            <p class="related"><strong>See also: </strong><a href="https://codepen.io/ariona/details/LVZLGP/" target="_blank">Staged dropdown animation</a></p>
+    <body>
+        <div class="card">
+            <div class="card-content">
+                <h1>Just hover around</h1>
+                <p><small>by <a href="https://www.fiverr.com/share/vLevr" target="_blank">Ariona, Rian</a></small></p>
+                <p class="related"><strong>See also: </strong><a href="https://codepen.io/ariona/details/LVZLGP/" target="_blank">Staged dropdown animation</a></p>
+            </div>
         </div>
-    </div>
-   
-    <script type="text/javascript">
-    // why it doesn't work on firefox?
-    var card = $(".card");
+        <script type="text/javascript">
+        $(function() {
+            // why it doesn't work on firefox?
+            var card = $(".card");
 
-    $(document).on("mousemove", function(e) {
-        var ax = -($(window).innerWidth() / 2 - e.pageX) / 20;
-        var ay = ($(window).innerHeight() / 2 - e.pageY) / 10;
-        card.attr("style", "transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg);-webkit-transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg);-moz-transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg)");
-    });
-    </script>
-</body>
+            $(document).on("mousemove", function(e) {
+                var ax = -($(window).innerWidth() / 2 - e.pageX) / 20;
+                var ay = ($(window).innerHeight() / 2 - e.pageY) / 10;
+                card.attr("style", "transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg);-webkit-transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg);-moz-transform: rotateY(" + ax + "deg) rotateX(" + ay + "deg)");
+            });
+        });
+        </script>
+    </body>
 
 </html>
