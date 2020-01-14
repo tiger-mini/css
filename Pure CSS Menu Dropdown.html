@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pure CSS Menu Dropdown</title>
+    <style type="text/css">
+    body {
+        background: #eee;
+        font-family: consolas, courier, monospace;
+    }
+
+    .menu_list,
+    .submenu_list {
+        list-style: none;
+        background: #333;
+        color: #888;
+        font-family: consolas, courier, monospace;
+    }
+
+    .menu_list,
+    .submenu_list,
+    .list,
+    .sub_list {
+        display: inline-block;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .submenu_list {
+        display: none;
+    }
+
+    .sub_list>a,
+    .list>a,
+    .list>.expand {
+        color: #888;
+        text-decoration: none;
+        display: block;
+    }
+
+    .list,
+    .sub_list {
+        border: 0;
+        border-right: 0;
+        position: relative;
+        width: 100px;
+    }
+
+    .list>a,
+    .sub_list>* {
+        border: 10px solid transparent;
+        padding: 10px;
+    }
+
+    .list:hover>a,
+    .list>a:focus,
+    .expand:hover,
+    .sub_list:hover>a,
+    .sub_list>a:focus {
+        color: #fff;
+        border-bottom: 10px solid white;
+        border-top: 10px solid white;
+        outline: 0;
+    }
+
+    .sub_list:hover>a,
+    .sub_list>a:focus {
+        border-top: 10px solid transparent;
+    }
+
+    .expand:hover {
+        cursor: pointer;
+    }
+
+    .menu_wrapper {
+        text-align: center;
+        background: #333;
+    }
+
+    .submenu_list {
+        position: absolute;
+        z-index: 1000;
+    }
+
+    .sub_list {
+        width: auto;
+    }
+
+    /*============================*/
+    /*THIS IS THE EXPANDING TRIGGER*/
+    a[name="expand"]:focus+.submenu_list,
+    a[name="expand"]:active+.submenu_list {
+        display: block;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="menu_wrapper" class="menu_wrapper">
+        <ul class="menu_list">
+            <li class="list" name="item">
+                <a href="#" name="single">ONE</a>
+            </li>
+            <li class="list" name="item">
+                <a href="#" onclick="return 0" name="expand">TWO &#9660;</a>
+                <ul name="sub_menu" class="submenu_list">
+                    <li class="sub_list"><a href="#">TWO-0</a></li>
+                    <li class="sub_list"><a href="#">TWO-1</a></li>
+                </ul>
+            </li>
+            <li class="list" name="item">
+                <a href="#" name="single">THREE</a>
+            </li>
+            <li class="list" name="item">
+                <a href="#" name="single">FOUR</a>
+            </li>
+            <li class="list" name="item">
+                <a href="#" onclick="return 0" name="expand">FIVE &#9660;</a>
+                <ul name="sub_menu" class="submenu_list">
+                    <li class="sub_list"><a href="#">FIVE-0</a></li>
+                    <li class="sub_list"><a href="#">FIVE-1</a></li>
+                    <li class="sub_list"><a href="#">FIVE-2</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <h1 style="text-align:center">
+        Pure CSS menu thingy
+    </h1>
+    <div style="text-align:center;">
+        <img style="width:80px;height:auto;opacity:.4" src="http://assets.johanpaul.net/images/Monkey_Saur.png"></img>
+    </div>
+    <!-- <![endif]-->
+</body>
+
+</html>
