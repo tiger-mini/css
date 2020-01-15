@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sun menu</title>
+    <style type="text/css">
+    * {
+        margin: 0px;
+        padding: 0px;
+        font-family: "HeliosCondRegular", sans-serif;
+        cursor: default;
+    }
+
+    .menu {
+        margin: 200px auto;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        background: -moz-radial-gradient(rgb(235, 235, 235), rgb(213, 213, 213));
+        background: -webkit-radial-gradient(rgb(235, 235, 235), rgb(213, 213, 213));
+        border: 1px solid lightgray;
+        border-radius: 50px;
+        list-style-type: none;
+        text-align: center;
+        display: block;
+    }
+
+    .item {
+        margin: 20px;
+        font-size: 0.5em;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        float: left;
+        position: relative;
+        opacity: 0;
+        visibility: hidden;
+        background: -moz-radial-gradient(left, rgb(213, 213, 213), rgb(245, 245, 245));
+        background: -webkit-radial-gradient(left, rgb(213, 213, 213), rgb(245, 245, 245));
+        border: 1px solid lightgray;
+        border-radius: 12.5px;
+    }
+
+    .menu:hover>[data-item="1"] {
+        bottom: 175px;
+        left: 18px;
+        opacity: 1;
+        visibility: visible;
+        -moz-transition: 400ms;
+        transition: 400ms;
+    }
+
+    .menu:hover>[data-item="2"] {
+        bottom: 215px;
+        left: 85px;
+        opacity: 1;
+        visibility: visible;
+        -moz-transition: 400ms 50ms;
+        transition: 400ms 50ms;
+    }
+
+    .menu:hover>[data-item="3"] {
+        bottom: 220px;
+        left: 115px;
+        opacity: 1;
+        visibility: visible;
+        -moz-transition: 400ms 100ms;
+        transition: 400ms 100ms;
+    }
+
+    .menu:hover>[data-item="4"] {
+        bottom: 220px;
+        left: 85px;
+        opacity: 1;
+        visibility: visible;
+        -moz-transition: 400ms 150ms;
+        transition: 400ms 150ms;
+    }
+
+    .menu:hover>[data-item="5"] {
+        bottom: 256px;
+        left: 18px;
+        opacity: 1;
+        visibility: visible;
+        -moz-transition: 400ms 200ms;
+        transition: 400ms 200ms;
+    }
+
+    .menu:hover>[data-item="6"] {
+        bottom: 350px;
+        right: 50px;
+        opacity: 1;
+        visibility: visible;
+        -moz-transition: 400ms 250ms;
+        transition: 400ms 250ms;
+    }
+
+    .menu:hover>[data-item="7"] {
+        bottom: 480px;
+        right: 80px;
+        opacity: 1;
+        visibility: visible;
+        -moz-transition: 400ms 300ms;
+        transition: 400ms 300ms;
+    }
+
+    .menu:hover>[data-item="8"] {
+        bottom: 609px;
+        right: 53px;
+        opacity: 1;
+        visibility: visible;
+        -moz-transition: 400ms 350ms;
+        transition: 400ms 350ms;
+    }
+
+    [data-item="1"] {
+        bottom: 235px;
+        left: 18px;
+        visibility: visible;
+        -moz-transition: 400ms 300ms, visibility 0ms 700ms;
+        transition: 400ms 300ms, visibility 0ms 700ms;
+    }
+
+    [data-item="2"] {
+        bottom: 295px;
+        left: 145px;
+        visibility: visible;
+        -moz-transition: 400ms 300ms, visibility 0ms 700ms;
+        transition: 400ms 300ms, visibility 0ms 700ms;
+    }
+
+    [data-item="3"] {
+        bottom: 220px;
+        left: 195px;
+        visibility: visible;
+        -moz-transition: 400ms 300ms, visibility 0ms 700ms;
+        transition: 400ms 300ms, visibility 0ms 700ms;
+    }
+
+    [data-item="4"] {
+        bottom: 160px;
+        left: 120px;
+        visibility: visible;
+        -moz-transition: 400ms 300ms, visibility 0ms 700ms;
+        transition: 400ms 300ms, visibility 0ms 700ms;
+    }
+
+    [data-item="5"] {
+        bottom: 196px;
+        left: 18px;
+        visibility: visible;
+        -moz-transition: 400ms 300ms, visibility 0ms 700ms;
+        transition: 400ms 300ms, visibility 0ms 700ms;
+    }
+
+    [data-item="6"] {
+        bottom: 300px;
+        right: 90px;
+        visibility: visible;
+        -moz-transition: 400ms 300ms, visibility 0ms 700ms;
+        transition: 400ms 300ms, visibility 0ms 700ms;
+    }
+
+    [data-item="7"] {
+        bottom: 480px;
+        right: 160px;
+        visibility: visible;
+        -moz-transition: 400ms 300ms, visibility 0ms 700ms;
+        transition: 400ms 300ms, visibility 0ms 700ms;
+    }
+
+    [data-item="8"] {
+        bottom: 659px;
+        right: 93px;
+        visibility: visible;
+        -moz-transition: 400ms 300ms, visibility 0ms 700ms;
+        transition: 400ms 300ms, visibility 0ms 700ms;
+    }
+
+    .menu:hover {
+        background: -moz-radial-gradient(rgb(213, 213, 213), rgb(235, 235, 235));
+        background: -webkit-radial-gradient(rgb(213, 213, 213), rgb(235, 235, 235));
+    }
+
+    .item:hover {
+        background: -moz-radial-gradient(left, rgb(233, 233, 233), rgb(250, 250, 250));
+        background: -webkit-radial-gradient(left, rgb(233, 233, 233), rgb(250, 250, 250));
+    }
+
+    @font-face {
+        font-family: "HeliosCondRegular";
+        src: url("helioscond.eot");
+        src: url("helioscond.eot") format("embedded-opentype"),
+            url("helioscond.woff") format("woff"),
+            url("helioscond.ttf") format("truetype");
+    }
+    </style>
+</head>
+
+<body>
+    <ul class="menu">
+        <span id="target">Hover</span>
+        <li data-item="1" class="item">Yes</li>
+        <li data-item="2" class="item">Yes</li>
+        <li data-item="3" class="item">Yes</li>
+        <li data-item="4" class="item">Yes</li>
+        <li data-item="5" class="item">Yes</li>
+        <li data-item="6" class="item">Yes</li>
+        <li data-item="7" class="item">Yes</li>
+        <li data-item="8" class="item">Yes</li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hamburger menu animation</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <style type="text/css">
+        body {
+          background: #383c55;
+          width: 100%;
+          height: 100%;
+        }
+        #screen {
+          width: 320px;
+          height: 560px;
+          top: 50px;
+          left: 50%;
+          margin-left: -160px;
+          position: absolute;
+          background: #31558a;
+          overflow: hidden;
+        }
+        menu {
+          width: 100%;
+          height: 100%;
+          background: #222;
+          padding-top: 80px;
+        }
+        menu a {
+          width: 100%;
+          margin-top: 40px;
+          font-size: 23px;
+          display: block;
+          letter-spacing: 1px;
+          text-decoration: none;
+          color: white;
+        }
+        main {
+          width: 100%;
+        }
+        nav {
+          height: 73px;
+          background: #385e97;
+        }
+        a.btn--toggle-menu {
+          color: white;
+          font-size: 40px;
+          position: relative;
+          top: 15px;
+          left: 20px;
+          text-decoration: none;
+        }
+        article {
+          padding: 25px 22px 0 22px;
+          display: block;
+        }
+        article:before, article:after {
+          clear: both;
+          display: table;
+          content: "";
+        }
+        article:first-child {
+          padding-top: 36px;
+        }
+        article figure {
+          float: left;
+          width: 71px;
+          height: 71px;
+          display: block;
+          background: #214273;
+          border-radius: 3px;
+          margin-right: 22px;
+          margin-left: 2px;
+        }
+        article p {
+          height: 11px;
+          width: 180px;
+          margin-bottom: 3px;
+          float: left;
+          background: #214273;
+          border-radius: 3px;
+        }
+        article p:nth-of-type(3) {
+          width: 75px;
+        }
+        #screen[data-effect=slide-in] main, #screen[data-effect=slide-in] menu {
+          transition: all 0.5s cubic-bezier(0, 0.995, 0.99, 1);
+        }
+        #screen[data-effect=slide-in] a.btn--toggle-menu .lnr-cross {
+          display: none;
+        }
+        #screen[data-effect=slide-in] a.btn--toggle-menu .lnr-menu {
+          display: block;
+        }
+        #screen[data-effect=slide-in] menu {
+          position: absolute;
+          left: -360px;
+          top: 0;
+          opacity: 0.5;
+        }
+        #screen[data-effect=slide-in] menu a {
+          margin-left: 0;
+          transition: all 0.8s cubic-bezier(0, 0.995, 0.99, 1);
+        }
+        #screen[data-effect=slide-in] menu a:nth-of-type(1) {
+          transition-delay: 0s;
+        }
+        #screen[data-effect=slide-in] menu a:nth-of-type(2) {
+          transition-delay: 0.06s;
+        }
+        #screen[data-effect=slide-in] menu a:nth-of-type(3) {
+          transition-delay: 0.12s;
+        }
+        #screen[data-effect=slide-in] menu a:nth-of-type(4) {
+          transition-delay: 0.18s;
+        }
+        #screen[data-effect=slide-in] menu a:nth-of-type(5) {
+          transition-delay: 0.24s;
+        }
+        #screen[data-effect=slide-in] main {
+          margin-left: 0;
+        }
+        #screen[data-effect=slide-in].menu--visible menu {
+          left: 0;
+          opacity: 1;
+          width: calc(100% - 110px);
+        }
+        #screen[data-effect=slide-in].menu--visible menu a {
+          margin-left: 80px;
+        }
+        #screen[data-effect=slide-in].menu--visible main {
+          margin-left: calc(100% - 80px);
+        }
+        #screen[data-effect=slide-in].menu--visible a.btn--toggle-menu .lnr-cross {
+          display: block;
+        }
+        #screen[data-effect=slide-in].menu--visible a.btn--toggle-menu .lnr-menu {
+          display: none;
+        }
+    </style>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="screen" data-effect="slide-in">
+        <menu>
+            <a>Home</a>
+            <a>Products</a>
+            <a>Blog</a>
+            <a>About</a>
+            <a>Contact</a>
+        </menu>
+        <main>
+            <nav>
+                <a class="btn--toggle-menu" href="">
+                    <span class="lnr lnr-menu"></span>
+                    <span class="lnr lnr-cross"></span>
+                </a>
+            </nav>
+            <div>
+                <article>
+                    <figure></figure>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                </article>
+                <article>
+                    <figure></figure>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                </article>
+                <article>
+                    <figure></figure>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                </article>
+                <article>
+                    <figure></figure>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                </article>
+            </div>
+        </main>
+    </div>
+    <script type="text/javascript">
+    $(function() {
+        $('.btn--toggle-menu').click(function(event) {
+            event.preventDefault();
+            $('#screen').toggleClass('menu--visible');
+        })
+    });
+    </script>
+</body>
+
+</html>
