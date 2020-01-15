@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Curved Text Along a Path</title>
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
+    <style type="text/css">
+    body {
+        background-color: #333;
+        font-family: 'Luckiest Guy', cursive;
+        font-size: 40px;
+    }
+
+    path {
+        fill: transparent;
+    }
+
+    text {
+        fill: #FF9800;
+    }
+    </style>
+</head>
+
+<body>
+    <svg viewBox="0 0 425 300">
+        <path id="curve" d="M6,150C49.63,93,105.79,36.65,156.2,47.55,207.89,58.74,213,131.91,264,150c40.67,14.43,108.57-6.91,229-145" />
+        <text x="25">
+            <textPath xlink:href="#curve">
+                Dangerous Curves Ahead
+            </textPath>
+        </text>
+    </svg>
+</body>
+
+</html>
